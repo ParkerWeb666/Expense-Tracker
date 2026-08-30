@@ -3,22 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Expense Tracker</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <main class="container">
       <h1>Мои расходы</h1>
-
       <section class="summary">
         <p>Всего расходов</p>
         <strong id="total">0 ₽</strong>
       </section>
       <section class="statistics">
-        <h2>Статистика</h2>
+        <div class="statistics-head" id="set-limit">
+          <h2>Статистика</h2>
+          <button>Задать лимит</button>
+        </div>
+        <form id="set-limit-form">
+          <ul id="limit-list"></ul>
+          <button id="save-limit" type="submit">Сохранить</button>
+        </form>
         <div id="statistics-list"></div>
         <div id="statistics-month"></div>
-
       </section>
       <form id="expense-form">
         <input id="expense-title" type="text" placeholder="Название расхода" />
@@ -34,7 +39,7 @@
 
         <button type="submit">Добавить</button>
       </form>
-      <section>
+      <section class="history-expenses">
         <h2>История расходов</h2>
         <input id="search-input" type="text" placeholder="Поиск расхода..." />
         <select id="sort-select">

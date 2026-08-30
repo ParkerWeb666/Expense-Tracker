@@ -1,11 +1,14 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #dadada;
+  background: #05060c;
+  color: #fff;
 }
 
 .container {
@@ -17,7 +20,7 @@ body {
 .summary,
 form,
 li {
-  background: white;
+  background: rgb(44, 44, 44);
   padding: 20px;
   margin-bottom: 15px;
   border-radius: 10px;
@@ -29,11 +32,23 @@ form {
   gap: 10px;
 }
 
-input,
-select,
+input, select{
+  padding: 10px;
+  font-size: 16px;
+  height: 20px;
+  background-color: #505050;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+}
+
+
+
 button {
   padding: 10px;
   font-size: 16px;
+  width: 100px;
+  height: 50px;
 }
 
 button {
@@ -43,8 +58,22 @@ button {
 #expense-list {
   padding: 0;
   list-style: none;
+
+  flex-direction: column;
 }
 
+#expense-list li {
+  display: flex;
+  justify-content: space-between;
+}
+
+#expense-list button {
+  background-color: rgb(21, 97, 84);
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  margin: 5px;
+}
 
 .stat-card {
   margin-bottom: 10px;
@@ -58,12 +87,59 @@ button {
 .stat-bar {
   width: 100%;
   height: 10px;
-  background-color: gray;
+  background-color: #fff;
   border-radius: 999px;
 }
 
 .stat-fill {
   height: 100%;
   border-radius: 999px;
-  
+}
+
+.month-item {
+  /* display: flex; */
+  background-color: rgb(44, 44, 44);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.month-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* .categories-container {
+  display: flex;
+  margin: 5px 0;
+  flex-direction: column;
+  gap: 10px;
+} */
+
+.history-expenses {
+  width: 100%;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+
+.statistics-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#set-limit-form {
+  display: none;
 }

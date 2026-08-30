@@ -6,7 +6,7 @@ export const categoryNames = {
 };
 export const categoryColors = {
   food: "red",
-  transport: "black",
+  transport: "green",
   entertainment: "orange",
-  other: "green",
+  other: "blue",
 };

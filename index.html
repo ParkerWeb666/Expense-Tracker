@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Мои расходы</h1>
+
+      <section class="summary">
+        <p>Всего расходов</p>
+        <strong id="total">0 ₽</strong>
+      </section>
+      <section class="statistics">
+        <h2>Статистика</h2>
+        <div id="statistics-list"></div>
+        <div id="statistics-month"></div>
+
+      </section>
+      <form id="expense-form">
+        <input id="expense-title" type="text" placeholder="Название расхода" />
+        <p id="title-error"></p>
+        <input id="expense-amount" type="number" placeholder="Сумма" />
+        <p id="amount-error"></p>
+        <select id="expense-category">
+          <option value="food">Еда</option>
+          <option value="transport">Транспорт</option>
+          <option value="entertainment">Развлечения</option>
+          <option value="other">Другое</option>
+        </select>
+
+        <button type="submit">Добавить</button>
+      </form>
+      <section>
+        <h2>История расходов</h2>
+        <input id="search-input" type="text" placeholder="Поиск расхода..." />
+        <select id="sort-select">
+          <option value="new">Сначала новые</option>
+          <option value="old">Сначала старые</option>
+          <option value="price-asc">Цена ↑</option>
+          <option value="price-desc">Цена ↓</option>
+        </select>
+        <ul id="expense-list"></ul>
+      </section>
+    </main>
+
+    <script src="src/app.js" type="module"></script>
+  </body>
+</html>

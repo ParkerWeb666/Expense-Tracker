@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #dadada;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.summary,
+form,
+li {
+  background: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+#expense-list {
+  padding: 0;
+  list-style: none;
+}
+
+
+.stat-card {
+  margin-bottom: 10px;
+}
+.stat-card p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 6px;
+  font-weight: 500;
+}
+.stat-bar {
+  width: 100%;
+  height: 10px;
+  background-color: gray;
+  border-radius: 999px;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 999px;
+  
+}

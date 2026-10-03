@@ -115,7 +115,6 @@ function updateTotal() {
 
 export function refreshUI() {
   saveExpenses(expenses);
-  saveBudgets(budgets);
   renderExpenses(
     expenses,
     searchQuery,
@@ -127,7 +126,7 @@ export function refreshUI() {
   updateTotal();
   updateStatistics(expenses, statistics, budgets);
   renderMonthlyExpenses(expenses, statisticsMonth);
-  initForm();
+  
 }
 
 initBudgetForm(refreshUI);

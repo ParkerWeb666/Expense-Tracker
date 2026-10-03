@@ -2,25 +2,47 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #05060c;
+  background: #0b1220;
   color: #fff;
 }
-
+.menu {
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menu img {
+  filter: brightness(10);
+}
 .container {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
 }
 
+.history-expenses {
+  background-color: #111827;
+  border-radius: 20px;
+  padding: 10px;
+  /* gap: 10px; */
+}
+
 .summary,
 form,
 li {
-  background: rgb(44, 44, 44);
+  background: #171f30;
   padding: 20px;
   margin-bottom: 15px;
   border-radius: 10px;
@@ -32,23 +54,29 @@ form {
   gap: 10px;
 }
 
-input, select{
-  padding: 10px;
+input {
+  padding: 5px;
   font-size: 16px;
-  height: 20px;
-  background-color: #505050;
+  height: 30px;
+  background-color: #0c121f;
   color: #fff;
   border: 0;
   border-radius: 10px;
 }
 
-
+select {
+}
 
 button {
   padding: 10px;
   font-size: 16px;
-  width: 100px;
+
   height: 50px;
+  background-color: #7c3aed;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  margin: 5px;
 }
 
 button {
@@ -68,7 +96,7 @@ button {
 }
 
 #expense-list button {
-  background-color: rgb(21, 97, 84);
+  background-color: #7c3aed;
   border: 0;
   border-radius: 5px;
   color: #fff;
@@ -98,7 +126,7 @@ button {
 
 .month-item {
   /* display: flex; */
-  background-color: rgb(44, 44, 44);
+  background-color: #111827;
   border-radius: 10px;
   padding: 10px;
   margin: 5px 0;

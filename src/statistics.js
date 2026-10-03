@@ -9,10 +9,10 @@ const limitList = document.querySelector("#limit-list");
 export const budgets = loadBudgets();
 
 function getProgressColor(percent) {
-      const safe = Math.min(percent, 100);
-      const hue = 120 - safe * 1.2;
-      return `hsl(${hue}, 80%, 50%)`;
-    }
+  const safe = Math.min(percent, 100);
+  const hue = 120 - safe * 1.2;
+  return `hsl(${hue}, 80%, 50%)`;
+}
 
 // Обновление статистики
 export function updateStatistics(expenses, statistics, budgets) {
@@ -37,7 +37,7 @@ export function updateStatistics(expenses, statistics, budgets) {
     const remaining = budget - amount;
 
     statsItem.textContent = `${categoryNames[category]} ${amount}/${budget}₽`;
-    const percent = (amount / budget) * 100;
+    const percent = budget === 0 ? 0 : (amount / budget) * 100;
     const card = document.createElement("div");
     card.classList.add("stat-card");
     const bar = document.createElement("div");
@@ -45,7 +45,7 @@ export function updateStatistics(expenses, statistics, budgets) {
     const fill = document.createElement("div");
     fill.classList.add("stat-fill");
     fill.style.width = `${Math.min(percent, 100)}%`;
-    
+
     fill.style.backgroundColor = getProgressColor(percent);
 
     const statRemaining = document.createElement("p");
@@ -145,8 +145,8 @@ function setLimit() {
     const limitItem = document.createElement("li");
     limitItem.classList.add("limit-item");
 
-    const limiItemTitle = document.createElement("span");
-    limiItemTitle.textContent = categoryNames[category];
+    const limitItemTitle = document.createElement("span");
+    limitItemTitle.textContent = categoryNames[category];
 
     const limitItemInput = document.createElement("input");
     limitItemInput.value = amount;
@@ -154,28 +154,26 @@ function setLimit() {
     limitItemInput.dataset.category = category;
 
     limitList.append(limitItem);
-    limitItem.append(limiItemTitle);
+    limitItem.append(limitItemTitle);
 
     limitItem.append(limitItemInput);
   });
 }
-export function initBudgetForm(onSave)
-{
+export function initBudgetForm(onSave) {
   setLimitForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const inputs = limitList.querySelectorAll("input");
+    const inputs = limitList.querySelectorAll("input");
 
-  inputs.forEach((input) => {
-    const category = input.dataset.category;
-    const amount = Number(input.value);
+    inputs.forEach((input) => {
+      const category = input.dataset.category;
+      const amount = Number(input.value);
 
-    budgets[category] = amount;
+      budgets[category] = amount;
+    });
+
+    setLimitForm.style.display = "none";
+    saveBudgets(budgets);
+    onSave();
   });
-
-  setLimitForm.style.display = "none";
-  saveBudgets(budgets);
-  onSave();
-});
 }
-
